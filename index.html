@@ -7,69 +7,45 @@
     <meta name="description" content="KABOx - Premium Software Solutions & Custom Systems">
     <title>KABOx | Next-Gen Software Solutions</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
-        /* ========================================= */
-        /* 1. VARIABLES & RESET                      */
-        /* ========================================= */
         :root {
-            /* --- COLOR PALETTE (Dark Mode Default) --- */
-            
-            /* Backgrounds */
-            --bg-core: #050a24;       /* Deep Navy (Requested) */
-            --bg-secondary: #0a1336;  /* Lighter Navy for Cards */
-            
-            /* Glassmorphism Effect Vars */
+            --bg-core: #050a24;
+            --bg-secondary: #0a1336;
             --card-glass: rgba(10, 19, 54, 0.6); 
-            --card-border: rgba(0, 168, 150, 0.2); /* Teal hint */
+            --card-border: rgba(0, 168, 150, 0.2);
             --card-hover: rgba(0, 168, 150, 0.08); 
-            
-            /* Brand Colors */
-            --primary: #00a896;      /* Teal (Headings & Buttons) */
-            --primary-glow: #00dac2; /* Lighter Teal for Gradients */
-            --accent: #f37021;       /* Orange (Accents/Hovers) */
-            
-            /* Text Colors */
-            --text-main: #ffffff;    /* White text for Dark Mode */
-            --text-muted: #dbe4f3;   /* Light Blue-Grey */
-            
-            /* Visual Effects */
+            --primary: #00a896;
+            --primary-glow: #00dac2;
+            --accent: #f37021;
+            --text-main: #ffffff;
+            --text-muted: #dbe4f3;
             --glow-gradient: linear-gradient(135deg, var(--primary), var(--primary-glow));
-            
             --shadow-soft: 0 15px 40px -10px rgba(0, 0, 0, 0.6);
-            --shadow-glow: 0 0 25px rgba(0, 168, 150, 0.4); /* Teal Glow */
-            --shadow-accent: 0 0 20px rgba(243, 112, 33, 0.4); /* Orange Glow */
+            --shadow-glow: 0 0 25px rgba(0, 168, 150, 0.4);
+            --shadow-accent: 0 0 20px rgba(243, 112, 33, 0.4);
         }
 
-        /* --- LIGHT MODE OVERRIDES --- */
         .light-mode {
-            --bg-core: #f0f4f8;       /* Very Light Grey/White */
-            --bg-secondary: #ffffff;  /* Pure White for Cards */
-            
-            --card-glass: rgba(255, 255, 255, 0.95); /* Opaque Glass */
+            --bg-core: #f0f4f8;
+            --bg-secondary: #ffffff;
+            --card-glass: rgba(255, 255, 255, 0.95);
             --card-border: rgba(0, 168, 150, 0.15);
             --card-hover: #e6fcf9;
-            
-            --primary: #008c7d;       /* Darker Teal for better contrast on white */
+            --primary: #008c7d;
             --primary-glow: #00a896;
-            --accent: #e65100;        /* Darker Orange */
-            
-            /* CRITICAL FIX: Swap text color to Dark Navy */
+            --accent: #e65100;
             --text-main: #050a24;     
             --text-muted: #475569;
-            
             --shadow-soft: 0 10px 30px -10px rgba(5, 10, 36, 0.08);
             --shadow-glow: 0 0 15px rgba(0, 168, 150, 0.15);
         }
 
-        /* Reset & Basics */
         * { margin: 0; padding: 0; box-sizing: border-box; outline: none; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
         
@@ -82,7 +58,6 @@
             transition: background 0.5s ease, color 0.5s ease;
         }
 
-        /* Ambient Background Blobs */
         .ambient-light {
             position: fixed;
             width: 700px; height: 700px;
@@ -104,15 +79,11 @@
             100% { transform: translate(50px, 50px) scale(1.1); }
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--bg-core); }
         ::-webkit-scrollbar-thumb { background: #1f2e5a; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-        /* ========================================= */
-        /* 2. LOADING SCREEN                         */
-        /* ========================================= */
         .preloader {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--bg-core);
@@ -126,7 +97,6 @@
         
         .logo-text {
             font-size: 4rem; font-weight: 900; letter-spacing: -2px;
-            /* Adaptive gradient text */
             background: linear-gradient(to right, var(--text-main), var(--text-muted)); 
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             opacity: 0; transform: translateY(20px);
@@ -145,9 +115,6 @@
         @keyframes fadeUpLogo { to { opacity: 1; transform: translateY(0); } }
         @keyframes loadProgress { to { width: 100px; } }
 
-        /* ========================================= */
-        /* 3. NAVBAR                                 */
-        /* ========================================= */
         .navbar {
             position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
             width: 90%; max-width: 1200px;
@@ -163,7 +130,6 @@
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.4);
         }
         
-        /* Navbar adjustment for Light Mode */
         .light-mode .navbar { 
             background: rgba(255, 255, 255, 0.85); 
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
@@ -207,9 +173,6 @@
 
         .mobile-toggle { display: none; font-size: 1.4rem; color: var(--text-main); cursor: pointer; }
 
-        /* ========================================= */
-        /* 4. HERO SECTION                           */
-        /* ========================================= */
         .hero {
             min-height: 100vh;
             display: flex; flex-direction: column;
@@ -234,7 +197,7 @@
             font-size: clamp(3rem, 8vw, 6rem);
             line-height: 1.1; font-weight: 900; margin-bottom: 20px;
             letter-spacing: -2px;
-            color: var(--text-main); /* FIX: Uses variable */
+            color: var(--text-main);
         }
         
         .gradient-text {
@@ -293,16 +256,13 @@
             z-index: -1; opacity: 0.6;
         }
 
-        /* ========================================= */
-        /* 5. SECTIONS & CARDS                       */
-        /* ========================================= */
         section { padding: 100px 5%; position: relative; }
         
         .section-title { text-align: center; margin-bottom: 80px; }
         
         .section-title h2 {
             font-size: 2.5rem; font-weight: 800; margin-bottom: 15px;
-            color: var(--text-main); /* FIX: Uses variable */
+            color: var(--text-main);
         }
         .section-title h2 span { color: var(--primary); }
         .section-title p { color: var(--text-muted); max-width: 500px; margin: 0 auto; }
@@ -355,13 +315,10 @@
 
         .tilt-card h3 { 
             font-size: 1.5rem; margin-bottom: 15px; font-weight: 700; 
-            color: var(--text-main); /* FIX: Uses variable */
+            color: var(--text-main);
         }
         .tilt-card p { color: var(--text-muted); font-size: 1rem; line-height: 1.7; }
 
-        /* ========================================= */
-        /* 6. PROJECTS                               */
-        /* ========================================= */
         .project-card {
             background: var(--bg-secondary);
             border-radius: 20px; overflow: hidden;
@@ -416,15 +373,12 @@
         }
         .project-info h3 { 
             font-size: 1.3rem; margin-bottom: 10px; 
-            color: var(--text-main); /* FIX: Uses variable */
+            color: var(--text-main);
         }
         .project-info p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; }
 
         .logo-media img { object-fit: contain; width: 150px; height: auto; }
 
-        /* ========================================= */
-        /* 7. PROCESS                                */
-        /* ========================================= */
         .steps-container {
             display: flex; flex-direction: column; gap: 40px;
             max-width: 900px; margin: 0 auto;
@@ -468,9 +422,6 @@
         .step-content h3 { color: var(--primary); margin-bottom: 10px; }
         .step-content p { color: var(--text-muted); }
 
-        /* ========================================= */
-        /* 8. FOOTER                                 */
-        /* ========================================= */
         footer {
             background: var(--bg-secondary);
             padding: 80px 5% 40px;
@@ -509,9 +460,6 @@
             padding-top: 30px; color: var(--text-muted); font-size: 0.9rem;
         }
 
-        /* ========================================= */
-        /* 9. MEDIA QUERIES                          */
-        /* ========================================= */
         @media (max-width: 900px) {
             .navbar { width: 95%; padding: 15px 20px; top: 10px; }
             .nav-links {
@@ -535,11 +483,9 @@
 
 <body>
 
-    <!-- Ambient Lighting -->
     <div class="ambient-light"></div>
     <div class="ambient-light"></div>
 
-    <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-content">
             <div class="logo-text">KABOx</div>
@@ -547,10 +493,8 @@
         </div>
     </div>
 
-    <!-- Canvas Background -->
     <canvas id="hero-canvas"></canvas>
 
-    <!-- Navigation -->
     <nav class="navbar">
         <a href="#" class="brand">
             <i class="fa-solid fa-cube fa-spin-pulse" style="--fa-animation-duration: 3s; color: var(--accent);"></i>
@@ -571,7 +515,6 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-tag" data-en="Next-Gen Digital Solutions" data-ar="حلول رقمية للجيل القادم">Next-Gen Digital Solutions</div>
         <h1 data-en="Your Vision" data-ar="رؤيتك">Your Vision</h1>
@@ -586,7 +529,6 @@
         </div>
     </section>
 
-    <!-- Services -->
     <section id="services">
         <div class="section-title">
             <h2 data-en="What We Do" data-ar="ماذا نقدم">What <span>We Do</span></h2>
@@ -594,7 +536,6 @@
         </div>
         
         <div class="grid-container" id="servicesGrid">
-            <!-- Card 1 -->
             <div class="tilt-card">
                 <div class="card-content">
                     <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
@@ -605,7 +546,6 @@
                     </p>
                 </div>
             </div>
-            <!-- Card 2 -->
             <div class="tilt-card">
                 <div class="card-content">
                     <div class="icon-box"><i class="fa-solid fa-server"></i></div>
@@ -616,7 +556,6 @@
                     </p>
                 </div>
             </div>
-            <!-- Card 3 -->
             <div class="tilt-card">
                 <div class="card-content">
                     <div class="icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
@@ -630,14 +569,12 @@
         </div>
     </section>
 
-    <!-- Work -->
     <section id="work">
         <div class="section-title">
             <h2 data-en="Selected Works" data-ar="أعمال مختارة">Selected <span>Works</span></h2>
             <p data-en="Innovations we've delivered to our partners." data-ar="ابتكارات قدمناها لشركائنا.">Innovations we've delivered to our partners.</p>
         </div>
         <div class="grid-container">
-            <!-- Project 1 -->
             <div class="project-card">
                 <div class="project-media">
                     <img src="img/Tafaham.png" alt="Tafaham" onerror="this.src='https://placehold.co/600x400/050a24/FFF?text=Tafaham'">
@@ -650,7 +587,6 @@
                     <h3 data-en="Tafahom Platform" data-ar="منصة تفاهم">Tafahom Platform</h3>
                 </div>
             </div>
-            <!-- Project 2 -->
             <div class="project-card">
                 <div class="project-media">
                     <img src="img/Food.png" alt="Rawabet" onerror="this.src='https://placehold.co/600x400/050a24/FFF?text=Rawabet'">
@@ -663,7 +599,6 @@
                     <h3 data-en="Rawabet Al Ghadhaa" data-ar="روابط الغذاء">Rawabet Al Ghadhaa</h3>
                 </div>
             </div>
-            <!-- Project 3 -->
             <div class="project-card">
                 <div class="project-media">
                     <img src="img/Sharia.jpg" alt="Charity" onerror="this.src='https://placehold.co/600x400/050a24/FFF?text=Charity'">
@@ -676,7 +611,6 @@
                     <h3 data-en="Al Jamia Al Sharia" data-ar="الجمعية الشرعية">Al Jamia Al Sharia</h3>
                 </div>
             </div>
-             <!-- Project 4 -->
              <div class="project-card">
                 <div class="project-media logo-media" style="background: var(--bg-core);">
                     <img src="img/KABOx.png" alt="KABOx" onerror="this.src='https://placehold.co/600x400/050a24/FFF?text=KABOx'">
@@ -693,7 +627,6 @@
         </div>
     </section>
 
-    <!-- Process -->
     <section id="process">
         <div class="section-title">
             <h2 data-en="Our Process" data-ar="آلية العمل">Our <span>Process</span></h2>
@@ -723,7 +656,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact">
         <div class="footer-logo">KABOx</div>
         <div class="social-grid">
@@ -737,9 +669,16 @@
         </div>
     </footer>
 
-    <!-- JavaScript Logic -->
     <script>
-        // 1. Preloader Logic
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) return false;
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) return false;
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) return false;
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) return false;
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
+        }
+
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
@@ -748,7 +687,6 @@
             }, 2000);
         });
 
-        // 2. Theme Switcher
         const themeBtn = document.getElementById('themeBtn');
         const icon = themeBtn.querySelector('i');
         let isDark = true;
@@ -759,7 +697,6 @@
             icon.className = isDark ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
         });
 
-        // 3. Language Switcher
         const langBtn = document.getElementById('langBtn');
         let currentLang = 'en';
 
@@ -767,10 +704,8 @@
             document.documentElement.lang = currentLang;
             document.documentElement.dir = currentLang === 'en' ? 'ltr' : 'rtl';
             
-            // Toggle Fonts
             document.body.style.fontFamily = currentLang === 'en' ? "'Outfit', sans-serif" : "'Tajawal', sans-serif";
             
-            // Update Text
             document.querySelectorAll('[data-en]').forEach(el => {
                 el.textContent = el.getAttribute(`data-${currentLang}`);
             });
@@ -783,7 +718,6 @@
             updateLang();
         });
 
-        // 4. Mobile Menu
         const menuBtn = document.getElementById('menuBtn');
         const navLinks = document.getElementById('navLinks');
         menuBtn.addEventListener('click', () => {
@@ -792,7 +726,6 @@
             menuBtn.querySelector('i').classList.toggle('fa-xmark');
         });
 
-        // 5. 3D Tilt Effect for Cards
         const cards = document.querySelectorAll('.tilt-card');
         
         cards.forEach(card => {
@@ -801,14 +734,12 @@
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
                 
-                // Set CSS variables for mouse position (for glow effect)
                 card.style.setProperty('--mouse-x', `${x}px`);
                 card.style.setProperty('--mouse-y', `${y}px`);
 
-                // Calculate Rotation
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -10; // Max 10deg
+                const rotateX = ((y - centerY) / centerY) * -10;
                 const rotateY = ((x - centerX) / centerX) * 10;
 
                 card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
@@ -819,7 +750,6 @@
             });
         });
 
-        // 6. Scroll Animation (Intersection Observer)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -830,7 +760,6 @@
 
         document.querySelectorAll('.reveal-scroll').forEach(el => observer.observe(el));
 
-        // 7. Canvas Background Animation
         const canvas = document.getElementById('hero-canvas');
         const ctx = canvas.getContext('2d');
         let particlesArray;
@@ -853,7 +782,6 @@
                 if(this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
             }
             draw() {
-                // Primary color (Teal) for particles
                 ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -875,14 +803,12 @@
                 particlesArray[i].update();
                 particlesArray[i].draw();
                 
-                // Connect particles
                 for(let j = i; j < particlesArray.length; j++) {
                     const dx = particlesArray[i].x - particlesArray[j].x;
                     const dy = particlesArray[i].y - particlesArray[j].y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
                     if(distance < 110) {
                         ctx.beginPath();
-                        // Orange Accent for connections
                         ctx.strokeStyle = `rgba(243, 112, 33, ${0.4 - distance/110})`; 
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
